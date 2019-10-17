@@ -15,6 +15,6 @@ class TestMoney(unittest.TestCase):
     def test_maltiplication(self):
         five = Dollar(5)
         product = five.times(2)
-        self.assertEqual(10, product)
-        five.times(3)
-        self.assertEqual(15, five.amount)
+        self.assertEqual(10, product.amount)
+        product = five.times(3)
+        self.assertEqual(15, product.amount)
