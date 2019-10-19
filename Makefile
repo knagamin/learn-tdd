@@ -1,4 +1,4 @@
 .PHONY: test
 
 test:
-	python -m unittest -v money/tests/test_money.py
+	python3 -m unittest -v money/tests/test_money.py

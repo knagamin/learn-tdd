@@ -2,8 +2,12 @@
 $5 + 10 CHF = $10 (レートが2:1の場合)
 [DONE] $5 * 2 = $10
 amountをprivateにする
-Dollarの副作用をどうする？
+[DONE] Dollarの副作用をどうする？
 Moneyの丸め処理どうする？
+[DONE] equals()
+hashCode()
+null との等価性比較
+他のオブジェクトとの等価性比較
 """
 
 import unittest
@@ -18,3 +22,7 @@ class TestMoney(unittest.TestCase):
         self.assertEqual(10, product.amount)
         product = five.times(3)
         self.assertEqual(15, product.amount)
+
+    def test_equality(self):
+        self.assertTrue(Dollar(5).equals(Dollar(5)))
+        self.assertFalse(Dollar(5).equals(Dollar(6)))
