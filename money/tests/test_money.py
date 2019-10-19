@@ -1,7 +1,7 @@
 """
 $5 + 10 CHF = $10 (レートが2:1の場合)
 [DONE] $5 * 2 = $10
-amountをprivateにする
+[DONE] amountをprivateにする
 [DONE] Dollarの副作用をどうする？
 Moneyの丸め処理どうする？
 [DONE] equals()
