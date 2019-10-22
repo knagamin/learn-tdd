@@ -7,8 +7,13 @@ class Money:
 
         return False
 
-    def dollar(self, amount):
+    @staticmethod
+    def dollar(amount):
         return Dollar(amount)
+
+    @staticmethod
+    def franc(amount):
+        return Franc(amount)
 
 
 class Dollar(Money):

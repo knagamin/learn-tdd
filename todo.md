@@ -12,3 +12,4 @@
 [x] equalsの一般化
 [] timesの一般化
 [x] FrancとDollarを比較する
+[] test_franc_multiplicationを削除する？
