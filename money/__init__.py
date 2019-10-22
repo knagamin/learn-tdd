@@ -1,3 +1,1 @@
-from .money import Money
-from .dollar import Dollar
-from .franc import Franc
+from .money import Money, Dollar, Franc
