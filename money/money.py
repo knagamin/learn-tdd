@@ -32,11 +32,7 @@ class Money(metaclass=ABCMeta):
 class Dollar(Money):
 
     def __init__(self, amount, currency):
-        self._amount = amount
-        self._currency = "USD"
-
-    def currency(self):
-        return self._currency
+        super().__init__(amount, currency)
 
     def times(self, multiplier):
         return Money.dollar(self._amount * multiplier)
@@ -45,11 +41,7 @@ class Dollar(Money):
 class Franc(Money):
 
     def __init__(self, amount, currency):
-        self._amount = amount
-        self._currency = "CHF"
-
-    def currency(self):
-        return self._currency
+        super().__init__(amount, currency)
 
     def times(self, multiplier):
         return Money.franc(self._amount * multiplier)
