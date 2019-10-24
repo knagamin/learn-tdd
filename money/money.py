@@ -1,7 +1,4 @@
-from abc import ABCMeta, abstractmethod
-
-
-class Money(metaclass=ABCMeta):
+class Money:
     _amount = 0
 
     def __init__(self, amount, currency):
@@ -9,16 +6,13 @@ class Money(metaclass=ABCMeta):
         self._currency = currency
 
     def __eq__(self, other):
-        if isinstance(other, self.__class__):
-            return self._amount == other._amount
-        return False
+        return self._amount == other._amount and self._currency == other._currency
 
     def currency(self):
         return self._currency
 
-    @abstractmethod
-    def times(self):
-        pass
+    def times(self, multiplier):
+        return Money(self._amount * multiplier, self._currency)
 
     @staticmethod
     def dollar(amount):
@@ -34,14 +28,8 @@ class Dollar(Money):
     def __init__(self, amount, currency):
         super().__init__(amount, currency)
 
-    def times(self, multiplier):
-        return Dollar(self._amount * multiplier, self._currency)
-
 
 class Franc(Money):
 
     def __init__(self, amount, currency):
         super().__init__(amount, currency)
-
-    def times(self, multiplier):
-        return Franc(self._amount * multiplier, self._currency)
