@@ -1,12 +1,13 @@
 [] $5 + 10 CHF = $10 (レートが2:1の場合)
-[x] $5 * 2 = $10
-[x] amountをprivateにする
-[x] ollarの副作用をどうする？
+[] $5 + $5 = $10
 [] Moneyの丸め処理どうする？
-[x] equals()
 [] hashCode()
 [] null との等価性比較
 [] 他のオブジェクトとの等価性比較
+[x] __eq__
+[x] $5 * 2 = $10
+[x] amountをprivateにする
+[x] ollarの副作用をどうする？
 [x] 5CHF * 2 = 10 CHF
 [x] DollarとFrancの重複
 [x] equalsの一般化
