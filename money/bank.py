@@ -1,7 +1,9 @@
-from money.money import Money
+from money.money import Money, Sum
+from money.expression import Expression
 
 
 class Bank:
 
-    def reduce(self, source, to):
-        return Money.dollar(10)
+    def reduce(self, source: Expression, to: str):
+        sum = source
+        return sum.reduce(to)

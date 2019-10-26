@@ -18,7 +18,10 @@ class Money(Expression):
         return Money(self._amount * multiplier, self._currency)
 
     def plus(self, addend):
-        return Money(self._amount + addend._amount, self._currency)
+        return Sum(self, addend)
+
+    def reduce(self, to: str):
+        return self
 
     @staticmethod
     def dollar(amount):
@@ -27,3 +30,15 @@ class Money(Expression):
     @staticmethod
     def franc(amount):
         return Money(amount, "CHF")
+
+
+class Sum(Expression):
+
+    def __init__(self, augend: Money, addend: Money):
+        self.augend = augend
+        self.addend = addend
+
+    def reduce(self, to: str):
+        amount = self.augend._amount + self.addend._amount
+        return Money(amount, to)
+
