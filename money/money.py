@@ -9,7 +9,8 @@ class Money(Expression):
         self._currency = currency
 
     def __eq__(self, other):
-        return self._amount == other._amount and self._currency == other._currency
+        return (self._amount == other._amount and
+                self._currency == other._currency)
 
     def currency(self):
         return self._currency
@@ -20,8 +21,9 @@ class Money(Expression):
     def plus(self, addend):
         return Sum(self, addend)
 
-    def reduce(self, to: str):
-        return self
+    def reduce(self, bank, to):
+        rate = bank.rate(self._currency, to)
+        return Money(self._amount / rate, to)
 
     @staticmethod
     def dollar(amount):
@@ -34,11 +36,29 @@ class Money(Expression):
 
 class Sum(Expression):
 
-    def __init__(self, augend: Money, addend: Money):
+    def __init__(self, augend, addend):
         self.augend = augend
         self.addend = addend
 
-    def reduce(self, to: str):
+    def reduce(self, bank, to):
         amount = self.augend._amount + self.addend._amount
         return Money(amount, to)
 
+
+class Bank:
+
+    rates = dict()
+
+    def reduce(self, source, to):
+        return source.reduce(self, to)
+
+    def rate(self, from_c, to_c):
+        if (from_c == to_c):
+            return 1
+
+        key = (from_c, to_c)
+        return self.rates[key]
+
+    def add_rate(self, from_c, to_c, rate):
+        key = (from_c, to_c)
+        self.rates[key] = rate

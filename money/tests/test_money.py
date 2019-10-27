@@ -1,6 +1,5 @@
 import unittest
-from money.money import Money, Sum
-from money.bank import Bank
+from money.money import Money, Sum, Bank
 
 
 class TestMoney(unittest.TestCase):
@@ -42,3 +41,13 @@ class TestMoney(unittest.TestCase):
         bank = Bank()
         result = bank.reduce(Money.dollar(1), "USD")
         self.assertEqual(Money.dollar(1), result)
+
+    def test_reduce_money_different_currency(self):
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        result = bank.reduce(Money.franc(2), "USD")
+        self.assertEqual(Money.dollar(1), result)
+
+    def test_indentity_rate(self):
+        bank = Bank()
+        self.assertEqual(1, bank.rate("USD", "USD"))
