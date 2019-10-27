@@ -5,5 +5,4 @@ from money.expression import Expression
 class Bank:
 
     def reduce(self, source: Expression, to: str):
-        sum = source
-        return sum.reduce(to)
+        return source.reduce(to)
