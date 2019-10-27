@@ -1,20 +1,20 @@
-[] $5 + 10 CHF = $10 (レートが2:1の場合)
-[] $5 + $5 = $10
-[] $5 + $5がMoneyを返す
-[x] Bank.reduce(Money)
-[] Moneyの丸め処理どうする？
-[] hashCode()
-[] null との等価性比較
-[] 他のオブジェクトとの等価性比較
-[x] __eq__
-[x] $5 * 2 = $10
-[x] amountをprivateにする
-[x] ollarの副作用をどうする？
-[x] 5CHF * 2 = 10 CHF
-[x] DollarとFrancの重複
-[x] equalsの一般化
-[x] timesの一般化
-[x] FrancとDollarを比較する
-[x] 通貨の概念
-[x] test_franc_multiplicationを削除する？
-[] assertion errorメッセージの可読化
+- [] $5 + 10 CHF = $10 (レートが2:1の場合)
+- [] $5 + $5 = $10
+- [] $5 + $5がMoneyを返す
+- [x] Bank.reduce(Money)
+- [] Moneyの丸め処理どうする？
+- [] hashCode()
+- [] null との等価性比較
+- [] 他のオブジェクトとの等価性比較
+- [x] __eq__
+- [x] $5 * 2 = $10
+- [x] amountをprivateにする
+- [x] ollarの副作用をどうする？
+- [x] 5CHF * 2 = 10 CHF
+- [x] DollarとFrancの重複
+- [x] equalsの一般化
+- [x] timesの一般化
+- [x] FrancとDollarを比較する
+- [x] 通貨の概念
+- [x] test_franc_multiplicationを削除する？
+- [] assertion errorメッセージの可読化
