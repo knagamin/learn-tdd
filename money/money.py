@@ -46,7 +46,8 @@ class Sum(Expression):
         return Money(amount, to)
 
     def plus(self, addend):
-        pass
+        return Sum(self, addend)
+
 
 class Bank:
 
