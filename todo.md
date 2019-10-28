@@ -1,13 +1,13 @@
 - [x] $5 + 10 CHF = $10 (レートが2:1の場合)
 - [x] $5 + $5 = $10
-- [] $5 + $5がMoneyを返す
+- [ ] $5 + $5がMoneyを返す
 - [x] Bank.reduce(Money)
-- [] Expressionのtimes
+- [ ] Expressionのtimes
 - [x] Sum.plus
-- [] Moneyの丸め処理どうする？
-- [] hashCode()
-- [] null との等価性比較
-- [] 他のオブジェクトとの等価性比較
+- [ ] Moneyの丸め処理どうする？
+- [ ] hashCode()
+- [ ] null との等価性比較
+- [ ] 他のオブジェクトとの等価性比較
 - [x] __eq__
 - [x] $5 * 2 = $10
 - [x] amountをprivateにする
@@ -19,4 +19,4 @@
 - [x] FrancとDollarを比較する
 - [x] 通貨の概念
 - [x] test_franc_multiplicationを削除する？
-- [] assertion errorメッセージの可読化
+- [ ] assertion errorメッセージの可読化
