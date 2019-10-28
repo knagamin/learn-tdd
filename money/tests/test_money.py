@@ -48,6 +48,23 @@ class TestMoney(unittest.TestCase):
         result = bank.reduce(Money.franc(2), "USD")
         self.assertEqual(Money.dollar(1), result)
 
-    def test_indentity_rate(self):
+    def test_identity_rate(self):
         bank = Bank()
         self.assertEqual(1, bank.rate("USD", "USD"))
+
+    def test_mixed_addition(self):
+        five_bucks = Money.dollar(5)
+        ten_francs = Money.franc(10)
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        result = bank.reduce(five_bucks.plus(ten_francs), "USD")
+        self.assertEqual(Money.dollar(10), result)
+
+    def test_sum_plus_money(self):
+        five_bucks = Money.dollar(5)
+        ten_francs = Money.franc(10)
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        sum = Sum(five_bucks, ten_francs).plus(five_bucks)
+        sum = result = bank.reduce(sum, "USD")
+        self.assertEqual(Money.dollar(10), result)
