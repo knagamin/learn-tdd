@@ -2,7 +2,7 @@
 - [x] $5 + $5 = $10
 - [ ] $5 + $5がMoneyを返す
 - [x] Bank.reduce(Money)
-- [ ] Expressionのtimes
+- [x] Expressionのtimes
 - [x] Sum.plus
 - [ ] Moneyの丸め処理どうする？
 - [ ] hashCode()

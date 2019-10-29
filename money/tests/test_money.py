@@ -66,5 +66,14 @@ class TestMoney(unittest.TestCase):
         bank = Bank()
         bank.add_rate("CHF", "USD", 2)
         sum = Sum(five_bucks, ten_francs).plus(five_bucks)
-        sum = result = bank.reduce(sum, "USD")
+        result = bank.reduce(sum, "USD")
         self.assertEqual(Money.dollar(15), result)
+
+    def test_sum_times(self):
+        five_bucks = Money.dollar(5)
+        ten_francs = Money.franc(10)
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        sum = Sum(five_bucks, ten_francs).times(2)
+        result = bank.reduce(sum, "USD")
+        self.assertEqual(Money.dollar(20), result)

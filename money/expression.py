@@ -4,9 +4,13 @@ from abc import ABCMeta, abstractmethod
 class Expression(metaclass=ABCMeta):
 
     @abstractmethod
-    def reduce(bank, to):
+    def reduce(self, bank, to):
         pass
 
     @abstractmethod
-    def plus(bank, to):
+    def plus(self, bank, to):
+        pass
+
+    @abstractmethod
+    def times(self, multiplier):
         pass
