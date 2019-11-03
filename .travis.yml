@@ -1,0 +1,14 @@
+---
+dist: xenial
+language: python
+
+python:
+  - 2.7
+  - 3.7
+
+script:
+  - make test-money
+  - make test-xunit
+
+notification:
+  email: false
